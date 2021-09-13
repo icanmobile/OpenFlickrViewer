@@ -65,16 +65,7 @@ class PhotoListFragment(
     }
 
     private fun subscribeObservers(){
-        viewModel.viewState.observe(viewLifecycleOwner, Observer { viewState ->
-            viewState?.photoListFragmentView?.let{ view ->
-                view.photos?.let { photos ->
-                    (recycler_view.adapter as PhotoListAdapter).apply {
-                        submitList(photos)
-                    }
-                    displayTheresNothingHereTextView((photos.isNotEmpty()))
-                }
-            }
-        })
+        viewModel.viewState.observe(viewLifecycleOwner, observer)
     }
 
     private val observer: Observer<ViewState> = Observer { viewState ->

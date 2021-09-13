@@ -51,12 +51,6 @@ fun MainViewModel.removeJobFromCounter(stateEventName: String){
 
 @ExperimentalCoroutinesApi
 @InternalCoroutinesApi
-fun MainViewModel.appendErrorState(errorState: ErrorState){
-    errorStack.add(errorState)
-}
-
-@ExperimentalCoroutinesApi
-@InternalCoroutinesApi
 fun MainViewModel.isJobAlreadyActive(stateEventName: String): Boolean {
     val viewState = getCurrentViewStateOrNew()
     return viewState.activeJobCounter.contains(stateEventName)
@@ -80,8 +74,16 @@ fun MainViewModel.areAnyJobsActive(): Boolean{
 
 @ExperimentalCoroutinesApi
 @InternalCoroutinesApi
-fun MainViewModel.clearError(index: Int){
-    errorStack.removeAt(index)
+fun MainViewModel.clearActiveJobCounter(){
+    val update = getCurrentViewStateOrNew()
+    update.activeJobCounter.clear()
+    setViewState(update)
+}
+
+@ExperimentalCoroutinesApi
+@InternalCoroutinesApi
+fun MainViewModel.appendErrorState(errorState: ErrorState){
+    errorStack.add(errorState)
 }
 
 @ExperimentalCoroutinesApi
@@ -92,8 +94,6 @@ fun MainViewModel.setErrorStack(errorStack: ErrorStack){
 
 @ExperimentalCoroutinesApi
 @InternalCoroutinesApi
-fun MainViewModel.clearActiveJobCounter(){
-    val update = getCurrentViewStateOrNew()
-    update.activeJobCounter.clear()
-    setViewState(update)
+fun MainViewModel.clearError(index: Int){
+    errorStack.removeAt(index)
 }
