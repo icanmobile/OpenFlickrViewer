@@ -1,20 +1,18 @@
 # Open Flickr Viewer
 
-Open Flickr Viewer is an Android app that displays a list of photos from data fetched from Flickr REST API.
-
+Open Flickr Viewer is an Android app that display photos from the Flickr server using Flickr REST API.
 
 
 ## Features
 
-- Search for a specific term to retrieve related photos from the **Flickr API**.
-- Fetch **25 photos at a time** from Flickr server.
-- Load **more photos** if you **scroll down** on the List screen.
-- Save the fetched photos and descriptions to **the local data storage**.
-- View a photo and title on the Detail screen.
-- View a photo on the Photo screen that provides zoom function.
-- Save the search terms using **SearchRecentSuggestionsProvider in Android platform** for quick search options.
-- Support **9** unit test cases and **8** UI test cases, including **fragment navigation**, **network timeout**, and **error dialog**.
-
+- Search for related photos on the Flickr server using **specific terms**.
+- Load **25 photos at a time** from the Flickr server.
+- Load **next 25 photos** if you **scroll down** on the Photo List screen.
+- Save the imported photos and descriptions to **local data storage**.
+- View the photo and title on the Photo Detail screen, when selecting a photo on the Photo List screen.
+- View the photo on the Photo screen with the zoom function, when selecting the photo on the Photo Detail screen
+- Save the search terms using **SearchRecentSuggestionsProvider in Android platform** for the quick search option.
+- Support **9** unit test cases and **8** UI test cases including **fragment navigation**, **network timeout**, and **error dialog**.
 
 
 **DEMO**
@@ -31,7 +29,7 @@ Open Flickr Viewer is an Android app that displays a list of photos from data fe
 
 ## Built with
 
-> Open Flicr Viewer is architectured using MVVM (Model-View-Viewmodel) pattern with variety of Android Jetpack's Architecture Components.
+> Open Flickr Viewer is architectured using MVVM (Model-View-Viewmodel) pattern with variety of Android Jetpack's Architecture Components.
 
 * [Android Jetpack - Architecture Component](https://developer.android.com/topic/libraries/architecture)
 * [Android Jetpack - ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
