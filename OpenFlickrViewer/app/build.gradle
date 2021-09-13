@@ -1,0 +1,108 @@
+import dependencies.Square
+import dependencies.UnitTest
+import dependencies.Versions
+import dependencies.AndroidX
+import dependencies.Google
+import dependencies.UITest
+import dependencies.Bumptech
+import dependencies.Afollestad
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion Versions.compileSdk
+
+    defaultConfig {
+        applicationId "com.icanmobile.openflickrviewer"
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode Versions.versionCode
+        versionName Versions.versionName
+
+        testInstrumentationRunner "com.icanmobile.openflickrviewer.MockTestRunner"
+
+        // The following argument makes the Android Test Orchestrator run its
+        // "pm clear" command after each test invocation. This command ensures
+        // that the app's state is completely cleared between tests.
+        testInstrumentationRunnerArguments clearPackageData: 'true'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = Versions.jvmTarget
+    }
+
+    testOptions {
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
+    }
+}
+
+dependencies {
+
+    implementation AndroidX.core_ktx
+    implementation AndroidX.app_compat
+    implementation AndroidX.constraint_layout
+
+    implementation AndroidX.fragment_ktx
+    debugImplementation AndroidX.fragment_testing
+
+    implementation AndroidX.lifecycle_runtime
+    implementation AndroidX.recyclerview
+
+    implementation AndroidX.nav_fragment_ktx
+    implementation AndroidX.nav_ui_ktx
+    implementation AndroidX.nav_runtime
+    androidTestImplementation AndroidX.nav_testing
+
+    implementation AndroidX.room_runtime
+    implementation AndroidX.room_ktx
+    kapt AndroidX.room_compiler
+
+    implementation Google.material
+    implementation Google.gson
+    implementation Google.dagger
+    kapt Google.dagger_compiler
+    kaptAndroidTest Google.dagger_compiler
+
+    implementation Square.retrofit
+    implementation Square.retrofit_gson
+    implementation Square.okHttp
+    implementation Square.okHttp_interceptor
+
+    implementation Bumptech.glide
+    kapt Bumptech.glide_compiler
+
+    implementation Afollestad.matieral_dialogs
+
+    testImplementation UnitTest.junit
+    testImplementation UnitTest.mockK
+    testImplementation UnitTest.test_core
+    testImplementation UnitTest.mock_web_server
+    testImplementation UnitTest.core_testing
+
+    androidTestUtil UITest.orchestrator
+    androidTestImplementation UITest.kotlin_test
+    androidTestImplementation UITest.espresso_core
+    androidTestImplementation UITest.espresso_contrib
+    implementation UITest.espresso_idling_resource
+    androidTestImplementation UITest.espresso_idling_resource
+    androidTestImplementation UITest.mockK
+    androidTestImplementation UITest.test_runner
+    androidTestImplementation UITest.test_rules
+    androidTestImplementation UITest.test_core
+    androidTestImplementation UITest.test_ext
+}

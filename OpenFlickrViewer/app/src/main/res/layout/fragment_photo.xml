@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.photo.PhotoFragment"
+    android:background="#000">
+
+    <com.icanmobile.openflickrviewer.ui.photo.ScalingImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scaling_image_view"
+        android:scaleType="centerInside"
+        android:src="@drawable/default_image"
+        />
+
+</FrameLayout>

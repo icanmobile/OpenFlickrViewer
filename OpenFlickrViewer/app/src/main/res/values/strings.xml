@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OpenFlickrViewer</string>
+    <string name="there_s_nothing_here">There\'s nothing here!</string>
+    <string name="text_error">Error</string>
+    <string name="text_ok">Ok</string>
+    <string name="search_title">dog</string>
+    <string name="search_hint">dog</string>
+</resources>
