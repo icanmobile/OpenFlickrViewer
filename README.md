@@ -46,6 +46,7 @@ Open Flickr Viewer is an Android app that display photos from the Flickr server 
 * [Glide](https://github.com/bumptech/glide)
 * [AndroidX Test](https://developer.android.com/jetpack/androidx/releases/test)
 * [JUnit](https://junit.org/junit4/)
+* [MockK](https://mockk.io/)
 
 
 ---
